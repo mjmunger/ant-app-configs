@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<app name="ConfigManagement" namespace="">
+  <file>
+    <name>/home/timing/www/includes/apps/ant-app-configs/tests</name>
+    <hash>da39a3ee5e6b4b0d3255bfef95601890afd80709</hash>
+  </file>
+  <file>
+    <name>/home/timing/www/includes/apps/ant-app-configs/app.php</name>
+    <hash>a12a4364249fba0a39d927d742ea946a572780eb</hash>
+  </file>
+  <file>
+    <name>/home/timing/www/includes/apps/ant-app-configs/public.key</name>
+    <hash>801656e08c261a417314299d8a1603e899f4bfe5</hash>
+  </file>
+  <action>
+    <hook>cli-load-grammar</hook>
+    <function>loadConfigGrammar</function>
+    <priority>50</priority>
+    <signature>18d6e87cb41964ed82f8f89bd283ce7ad95efb8c</signature>
+  </action>
+  <action>
+    <hook>cli-init</hook>
+    <function>declareMySelf</function>
+    <priority>20</priority>
+    <signature>eddd4bc0a1787c9553bc3d8ed44f1a13cd49fef9</signature>
+  </action>
+  <action>
+    <hook>cli-command</hook>
+    <function>processCommand</function>
+    <priority>50</priority>
+    <signature>d44f7e3739770a1c297d1468100728eebf94a8da</signature>
+  </action>
+</app>
