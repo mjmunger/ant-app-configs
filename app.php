@@ -141,8 +141,8 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
         $key   = $cmd->tokens[2];
         $success = $AE->Configs->setConfig($key,$value);
 
-        if($this->verbosity > 9) {
-            debug_print($cmd->tokens);
+        if($this->verbosity > 14) {
+            $AE->Configs->debug_print($cmd->tokens);
             echo str_pad('Key will be:', 20);
             echo $key;
             echo PHP_EOL;
