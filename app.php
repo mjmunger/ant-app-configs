@@ -11,11 +11,11 @@
  /**
  * Allows a user to get and set configurations in the database.
  *
- * @package      BFW
+ * @package      PHPAnt
  * @subpackage   Apps
  * @category     Config Management
  * @author       Michael Munger <michael@highpoweredhelp.com>
- */ 
+ */
 
 
 class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppInterface  {
@@ -46,7 +46,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
      * $appConfigManagement->addHook('cli-load-grammar','loadConfigGrammar');
      * </code>
      *
-     * @return array An array of CLI grammar that will be merged with the rest of the grammar. 
+     * @return array An array of CLI grammar that will be merged with the rest of the grammar.
      * @author Michael Munger <michael@highpoweredhelp.com>
      **/
 
@@ -63,7 +63,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
         $results['success'] = true;
         return $results;
     }
-    
+
     /**
      * Callback function that prints to the CLI during cli-init to show this app has loaded.
      * Example:
@@ -92,7 +92,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
      * </code>
      *
      * @return array An associative array declaring the status / success of the operation.
-     * @param string $what the class of settings we wish to show. 
+     * @param string $what the class of settings we wish to show.
      * @author Michael Munger <michael@highpoweredhelp.com>
      **/
 
@@ -107,7 +107,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
                     $row->CLIPrintMe();
                 }
                 break;
-            
+
             default:
                 # code...
                 break;
@@ -156,7 +156,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
             echo PHP_EOL;
 
         }
-        return ['success' => $success ];        
+        return ['success' => $success ];
     }
 
     /**
@@ -186,7 +186,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
         foreach($result as $key => $value) {
             echo str_pad($key, 20);
             echo $value;
-            echo PHP_EOL;        
+            echo PHP_EOL;
         }
         return ['success' => true];
     }
@@ -211,7 +211,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
 
         echo ($result ? "$key deleted" : "$key could not be deleted");
         echo PHP_EOL;
-        
+
         return ['success' => $result];
     }
 
@@ -240,7 +240,7 @@ class ConfigManagement extends \PHPAnt\Core\AntApp implements \PHPAnt\Core\AppIn
                     break;
             }
         } elseif ($cmd->startswith("settings set")) {
-            
+
             return $this->settingsSet($args);
 
         } elseif ($cmd->startswith("settings get")) {
